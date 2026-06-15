@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arena Solar · Energia solar para empresas no interior de SP</title>
+<meta name="description" id="metaDesc" content="Energia solar para a sua empresa no interior de São Paulo. Reduza até 90% do custo de energia, com projeto sob medida, atendimento local e financiamento empresarial.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- =========================================================
+  ARENA SOLAR · LP COMERCIAL · CIDADE DINÂMICA
+  Uso: lp-comercial.html?cidade=rio-preto | ibitinga | barretos | itapolis
+  Sem parâmetro → versão "interior de SP / região".
+  Promessa de economia: 90% (padrão). Cálculo honesto (nova = 10% da conta).
+========================================================= -->
+
+<style>
+:root{
+  --indigo-950:#101240;--indigo-900:#15184f;--indigo-800:#1d2070;--indigo-700:#2a2e9c;
+  --royal:#2547f0;--electric:#1f3cff;--blue-cta:#1e5fe6;--blue-cta-2:#1646c6;
+  --gold:#F5A623;--gold-600:#e8950e;--gold-brown:#b8893a;
+  --cream:#f6efe0;--bg-cream:#faf8f3;--bg-gray:#edeef1;--white:#fff;
+  --ink-900:#1c2050;--ink-blue:#2b30a0;--ink-600:#5a5f73;--ink-400:#9097a8;
+  --hairline:#e5e1d8;--green:#10B981;--red:#DC2626;
+  --r-pill:999px;
+  --font-head:'Poppins',sans-serif;--font-mono:'JetBrains Mono',monospace;
+  --sh-cta:0 14px 34px rgba(30,95,230,.4);--sh-cta-h:0 18px 40px rgba(30,95,230,.5);
+  --sh-card:0 8px 30px rgba(20,24,80,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-head);background:#fff;color:var(--ink-900);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.sec-label{font-family:var(--font-mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:10px;margin-bottom:14px;font-weight:500}
+.sec-label::before{content:"";width:26px;height:2px;background:var(--gold)}
+.btn-primary{display:inline-flex;align-items:center;gap:14px;background:linear-gradient(180deg,var(--blue-cta),var(--blue-cta-2));color:#fff;border:none;border-radius:var(--r-pill);padding:14px 28px 14px 14px;cursor:pointer;box-shadow:var(--sh-cta);font-family:var(--font-head);text-align:left;transition:transform .15s,box-shadow .2s}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:var(--sh-cta-h)}
+.btn-primary .ico{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center;font-size:18px;flex-shrink:0}
+.btn-primary .txt b{display:block;font-weight:700;font-size:15px;line-height:1.1;color:#fff}
+.btn-primary .txt span{font-size:11px;opacity:.85;font-weight:400;letter-spacing:.04em}
+.pill-badge{display:inline-flex;align-items:center;gap:8px;background:var(--cream);color:var(--gold-brown);font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;padding:7px 16px;border-radius:var(--r-pill)}
+.pill-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.pill-badge.dark{background:rgba(246,239,224,.12);color:#f2d9a0}
+.nav{position:absolute;top:0;left:0;right:0;z-index:50;padding:22px 0}
+.nav .row{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-family:var(--font-head);font-weight:800;font-size:22px;color:#fff;letter-spacing:.02em}
+.brand b{color:var(--gold)}
+.nav .links{display:flex;gap:24px;font-size:13.5px;color:rgba(255,255,255,.85);align-items:center}
+.nav .links a:hover{color:var(--gold)}
+.seg-switch{display:flex;gap:6px;align-items:center}
+.seg-switch a{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.15);padding:5px 11px;border-radius:999px;transition:all .15s}
+.seg-switch a:hover{color:#fff;border-color:rgba(255,255,255,.4)}
+.seg-switch a.on{color:var(--indigo-950);background:var(--gold);border-color:var(--gold);font-weight:700}
+@media(max-width:960px){.nav .links{display:none}}
+.hero{position:relative;padding:140px 0 110px;background:radial-gradient(120% 140% at 70% 0%,var(--indigo-700),var(--indigo-900) 55%,var(--indigo-950));color:#fff;overflow:hidden}
+.hero::before{content:"";position:absolute;top:0;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(31,60,255,.35),transparent 60%);filter:blur(80px)}
+.hero::after{content:"";position:absolute;bottom:-200px;left:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(245,166,35,.18),transparent 60%);filter:blur(100px)}
+.hero .row{display:grid;grid-template-columns:1.25fr .85fr;gap:56px;align-items:center;position:relative;z-index:1}
+.hero h1{font-family:var(--font-head);font-weight:800;font-size:clamp(34px,4.7vw,54px);line-height:1.07;letter-spacing:-.02em;margin:18px 0 18px}
+.hero h1 b{color:var(--gold)}
+.hero p.lead{color:rgba(255,255,255,.82);max-width:560px;font-size:18px;margin-bottom:30px;line-height:1.6}
+.hero .actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.hero .micro{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.hero-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(20px);border-radius:18px;padding:28px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.hero-card .ti{font-family:var(--font-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.hero-card .num{font-family:var(--font-head);font-weight:800;font-size:48px;color:#fff;line-height:1;letter-spacing:-.02em}
+.hero-card .num b{color:var(--gold)}
+.hero-card .sub{color:rgba(255,255,255,.7);font-size:14px;margin-top:6px}
+.hero-card hr{border:0;border-top:1px solid rgba(255,255,255,.1);margin:22px 0}
+.hero-card ul{list-style:none;display:grid;gap:10px}
+.hero-card li{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.85)}
+.hero-card li::before{content:"⚡";color:var(--gold)}
+@media(max-width:900px){.hero{padding:112px 0 70px}.hero .row{grid-template-columns:1fr;gap:38px}}
+.strip{background:var(--indigo-800);padding:24px 0;color:#fff;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.strip .row{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.strip .item .num{font-family:var(--font-head);font-weight:800;font-size:24px;color:var(--gold);line-height:1}
+.strip .item .lbl{font-size:13px;color:rgba(255,255,255,.7);margin-top:6px;letter-spacing:.03em}
+@media(max-width:760px){.strip .row{grid-template-columns:repeat(2,1fr);gap:18px}}
+.benef{padding:96px 0;background:var(--bg-cream)}
+.benef .head{text-align:center;max-width:720px;margin:0 auto 50px}
+.benef h2{font-family:var(--font-head);font-weight:800;font-size:clamp(28px,3.6vw,42px);color:var(--ink-900);line-height:1.15;letter-spacing:-.01em;margin-bottom:14px}
+.benef h2 b{color:var(--gold)}
+.benef .lead{color:var(--ink-600);font-size:17px}
+.bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.bcard{background:#fff;border:1px solid var(--hairline);border-radius:16px;padding:28px 22px;transition:transform .2s,box-shadow .25s}
+.bcard:hover{transform:translateY(-4px);box-shadow:var(--sh-card)}
+.bcard .ic{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,var(--royal),var(--electric));display:grid;place-items:center;font-size:26px;margin-bottom:16px;box-shadow:0 8px 20px rgba(37,71,240,.3)}
+.bcard h4{font-family:var(--font-head);font-weight:700;font-size:17px;color:var(--ink-900);margin-bottom:8px;line-height:1.2}
+.bcard p{font-size:13.5px;color:var(--ink-600);line-height:1.5}
+@media(max-width:900px){.bgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.bgrid{grid-template-columns:1fr}}
+.problema{padding:96px 0;background:#fff}
+.problema .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start}
+.problema h2{font-family:var(--font-head);font-weight:800;font-size:clamp(28px,3.4vw,40px);color:var(--ink-900);line-height:1.15;letter-spacing:-.01em;margin-top:14px}
+.problema h2 b{color:var(--gold)}
+.problema .lead{color:var(--ink-600);font-size:17px;line-height:1.6;margin-top:14px}
+.problema .pcard{background:var(--bg-cream);border-radius:14px;padding:24px;border-left:4px solid var(--gold);margin-top:18px}
+.problema .pcard .quote{font-family:var(--font-head);font-weight:600;font-size:19px;color:var(--ink-900);line-height:1.35}
+.problema .pcard .source{font-size:13px;color:var(--ink-600);margin-top:10px;font-style:italic}
+.problema .points{display:grid;gap:12px;margin-top:30px}
+.problema .point{display:flex;gap:14px;align-items:flex-start;background:#fff;padding:16px 20px;border-radius:12px;border:1px solid var(--hairline)}
+.problema .point .n{font-family:var(--font-head);font-weight:800;font-size:20px;color:var(--gold);line-height:1;min-width:62px}
+.problema .point h4{font-size:15px;color:var(--ink-900);margin-bottom:4px;font-weight:600}
+.problema .point p{font-size:13.5px;color:var(--ink-600);line-height:1.5}
+@media(max-width:900px){.problema .grid{grid-template-columns:1fr;gap:36px}}
+.porque{padding:100px 0;background:linear-gradient(135deg,var(--indigo-700),var(--indigo-900));color:#fff;position:relative;overflow:hidden}
+.porque::before{content:"";position:absolute;top:50%;left:50%;width:1000px;height:1000px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(31,60,255,.15),transparent 65%)}
+.porque .head{text-align:center;max-width:720px;margin:0 auto 50px;position:relative}
+.porque h2{font-family:var(--font-head);font-weight:800;font-size:clamp(28px,3.6vw,42px);color:#fff;line-height:1.15;margin-bottom:14px;letter-spacing:-.01em}
+.porque h2 b{color:var(--gold)}
+.porque .lead{color:rgba(255,255,255,.75);font-size:17px}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+.tile{background:linear-gradient(160deg,var(--royal),var(--electric));border-radius:14px;padding:28px 20px;text-align:center;box-shadow:0 0 0 1px rgba(120,150,255,.45),0 0 26px rgba(31,60,255,.45);position:relative;overflow:hidden}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.12),transparent 40%)}
+.tile .ti{font-size:30px;margin-bottom:12px;color:#fff;display:block;position:relative;z-index:1}
+.tile .tt{color:#fff;font-family:var(--font-head);font-weight:500;font-size:14px;line-height:1.3;position:relative;z-index:1}
+.tile .tt b{display:block;color:var(--gold);font-weight:700;margin-top:4px;font-size:15px}
+@media(max-width:900px){.tiles{grid-template-columns:repeat(2,1fr)}}
+.depo{padding:96px 0;background:#fff}
+.depo .head{text-align:center;max-width:760px;margin:0 auto 50px}
+.depo h2{font-family:var(--font-head);font-weight:800;font-size:clamp(28px,3.4vw,42px);color:var(--ink-900);line-height:1.15;letter-spacing:-.01em;margin-bottom:14px}
+.depo h2 b{color:var(--gold)}
+.depo .lead{color:var(--ink-600);font-size:17px}
+.tcards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tcard{background:#fff;border-radius:14px;overflow:hidden;box-shadow:var(--sh-card);border:1px solid var(--hairline);transition:transform .2s}
+.tcard:hover{transform:translateY(-4px)}
+.tcard .photo{height:160px;background-size:cover;background-position:center;position:relative;display:flex;align-items:flex-start;justify-content:flex-end;padding:12px}
+.tcard .photo::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),transparent 35%,rgba(0,0,0,.72));pointer-events:none}
+.tcard .tag{position:relative;z-index:2;background:rgba(245,166,35,.95);color:#1a1a1a;font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:5px 11px;border-radius:999px}
+.tcard .name-label{position:absolute;bottom:12px;left:14px;right:14px;z-index:2;font-family:var(--font-head);font-weight:700;font-size:15px;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.5);line-height:1.25}
+.tcard .name-label small{display:block;font-weight:400;font-size:12px;color:rgba(255,255,255,.92);margin-top:2px;text-shadow:0 1px 4px rgba(0,0,0,.6)}
+.tcard .body{padding:20px}
+.tcard .econ{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:14px;border-bottom:1px solid #eee;margin-bottom:12px}
+.tcard .econ .lbl{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-600);font-weight:500;max-width:130px;line-height:1.4}
+.tcard .econ .val{font-family:var(--font-head);font-weight:800;font-size:18px;color:var(--gold-600);letter-spacing:-.01em;text-align:right}
+.tcard .specs{display:grid;gap:6px}
+.tcard .specs .row{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--ink-600);line-height:1.45}
+.tcard .specs .row::before{content:"⚡";color:var(--gold);font-size:11px;flex-shrink:0}
+.depo .placeholder-note{text-align:center;margin-top:24px;font-size:12.5px;color:var(--ink-400);font-style:italic}
+.depo-cta{text-align:center;margin-top:44px}
+@media(max-width:900px){.tcards{grid-template-columns:1fr}}
+@media(max-width:1100px) and (min-width:901px){.tcards{grid-template-columns:repeat(2,1fr)}}
+.faq{padding:96px 0;background:var(--bg-cream)}
+.faq .head{text-align:center;max-width:680px;margin:0 auto 46px}
+.faq h2{font-family:var(--font-head);font-weight:800;font-size:clamp(28px,3.4vw,42px);color:var(--ink-900);line-height:1.15;letter-spacing:-.01em}
+.faq h2 b{color:var(--gold)}
+.qa{max-width:780px;margin:0 auto}
+.qa details{background:#fff;border-radius:14px;padding:20px 26px;box-shadow:var(--sh-card);margin-bottom:12px}
+.qa summary{font-family:var(--font-head);font-weight:600;font-size:16px;color:var(--ink-900);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.qa summary::after{content:"+";font-size:24px;color:var(--gold);font-weight:300}
+.qa details[open] summary::after{content:"−"}
+.qa details p{margin-top:14px;color:var(--ink-600);font-size:14.5px;line-height:1.65}
+.cta-final{padding:110px 0;background:radial-gradient(120% 140% at 50% 0%,var(--indigo-700),var(--indigo-950));color:#fff;text-align:center;position:relative;overflow:hidden}
+.cta-final::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 50%,rgba(31,60,255,.2),transparent 50%),radial-gradient(circle at 70% 50%,rgba(245,166,35,.12),transparent 50%)}
+.cta-final h2{font-family:var(--font-head);font-weight:800;font-size:clamp(32px,5vw,52px);line-height:1.06;letter-spacing:-.02em;margin-bottom:18px;position:relative}
+.cta-final h2 b{color:var(--gold)}
+.cta-final p{color:rgba(255,255,255,.78);font-size:18px;max-width:600px;margin:0 auto 34px;position:relative}
+.cta-final .actions{position:relative;display:inline-flex}
+footer{background:var(--indigo-950);color:#a5acd6;padding:56px 0 30px}
+footer .row{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:36px}
+footer .brand-block .brand{margin-bottom:16px}
+footer .brand-block p{font-size:14px;line-height:1.6;color:rgba(255,255,255,.6);max-width:340px}
+footer h5{font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:500}
+footer ul{list-style:none;display:grid;gap:8px}
+footer li{font-size:14px;color:rgba(255,255,255,.7)}
+footer .end{padding-top:28px;border-top:1px solid rgba(255,255,255,.08);text-align:center;font-size:12px;color:rgba(255,255,255,.45)}
+footer .end a{color:var(--gold)}
+@media(max-width:760px){footer .row{grid-template-columns:1fr;gap:28px}}
+.wa-float{position:fixed;bottom:24px;right:24px;background:#25D366;color:#fff;padding:14px 22px;border-radius:999px;box-shadow:0 12px 30px rgba(0,0,0,.25);font-family:var(--font-head);font-weight:600;font-size:14.5px;display:inline-flex;align-items:center;gap:10px;z-index:90;transition:transform .15s}
+.wa-float:hover{transform:translateY(-2px) scale(1.02)}
+.wa-float svg{width:20px;height:20px;fill:#fff}
+.modal-overlay{position:fixed;inset:0;background:rgba(8,10,40,.7);backdrop-filter:blur(6px);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .25s}
+.modal-overlay.open{display:flex;opacity:1}
+.modal-card{background:#fff;border-radius:18px;width:100%;max-width:460px;max-height:92vh;overflow-y:auto;box-shadow:0 30px 90px rgba(0,0,0,.5);position:relative;transform:translateY(16px) scale(.98);transition:transform .25s}
+.modal-overlay.open .modal-card{transform:translateY(0) scale(1)}
+.modal-close{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;background:#f0f1f6;border:none;color:var(--ink-600);font-size:20px;cursor:pointer;display:grid;place-items:center;z-index:5;transition:background .15s}
+.modal-close:hover{background:#e1e3ee;color:var(--ink-900)}
+.wizard{padding:32px 28px}
+.wizard .progress-bar{height:4px;background:#e1e3ee;border-radius:999px;overflow:hidden;margin-bottom:8px;margin-top:6px}
+.wizard .progress-fill{height:100%;background:linear-gradient(90deg,var(--royal),var(--gold));transition:width .4s cubic-bezier(.4,0,.2,1);border-radius:999px}
+.wizard .step-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;display:flex;justify-content:space-between;margin-bottom:22px}
+.wizard .step-label .step-count{color:var(--ink-400)}
+.step{display:none;animation:fadeIn .35s ease}
+.step.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.step h3{font-family:var(--font-head);font-weight:700;font-size:21px;color:var(--ink-900);margin-bottom:6px;letter-spacing:-.01em;line-height:1.25}
+.step .step-sub{font-size:13px;color:var(--ink-600);margin-bottom:20px;line-height:1.5}
+.wizard input[type=text],.wizard input[type=tel]{width:100%;padding:14px 16px;border:1.5px solid #e1e3ee;border-radius:10px;font-family:var(--font-head);font-size:15px;color:var(--ink-900);background:#fff;transition:border-color .15s,box-shadow .15s}
+.wizard input:focus{outline:none;border-color:var(--royal);box-shadow:0 0 0 3px rgba(37,71,240,.15)}
+.wizard input::placeholder{color:#aeb2c4}
+.wizard label.fl{font-size:12px;font-weight:600;color:var(--ink-900);display:block;margin-bottom:6px}
+.wizard .err{color:var(--red);font-size:12.5px;margin-top:8px;display:none}
+.wizard .err.show{display:block}
+.choice-grid{display:grid;gap:12px;margin-bottom:14px}
+.choice{display:flex;gap:14px;align-items:center;padding:15px 18px;border:1.5px solid #e1e3ee;border-radius:12px;cursor:pointer;background:#fff;transition:all .15s;text-align:left;width:100%;font-family:var(--font-head)}
+.choice:hover{border-color:var(--royal);background:rgba(37,71,240,.03);transform:translateY(-1px)}
+.choice.selected{border-color:var(--royal);background:linear-gradient(135deg,rgba(37,71,240,.06),rgba(245,166,35,.04));box-shadow:0 4px 14px rgba(37,71,240,.15)}
+.choice .ic{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--royal),var(--electric));color:#fff;display:grid;place-items:center;font-size:19px;flex-shrink:0;box-shadow:0 4px 12px rgba(37,71,240,.3)}
+.choice .info .ttl{font-family:var(--font-head);font-weight:600;font-size:14.5px;color:var(--ink-900);line-height:1.2}
+.choice .info .desc{font-size:12.5px;color:var(--ink-600);margin-top:2px;line-height:1.4}
+.wizard-nav{display:flex;gap:10px;margin-top:18px}
+.btn-back{background:#fff;border:1.5px solid #e1e3ee;color:var(--ink-900);padding:13px 22px;border-radius:10px;font-family:var(--font-head);font-weight:600;font-size:14px;cursor:pointer;transition:all .15s}
+.btn-back:hover{background:#f6f7fb;border-color:var(--royal);color:var(--royal)}
+.btn-next{flex:1;background:linear-gradient(180deg,var(--blue-cta),var(--blue-cta-2));color:#fff;border:none;border-radius:10px;font-family:var(--font-head);font-weight:600;font-size:14.5px;padding:13px 22px;cursor:pointer;box-shadow:var(--sh-cta);transition:all .15s}
+.btn-next:hover{transform:translateY(-2px);box-shadow:var(--sh-cta-h)}
+.report{display:none;animation:fadeIn .5s ease}
+.report.active{display:block}
+.report-badge{display:inline-flex;align-items:center;gap:8px;background:var(--cream);color:var(--gold-brown);font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;padding:7px 16px;border-radius:999px;margin-bottom:14px}
+.report-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.report h3.report-title{font-family:var(--font-head);font-weight:800;font-size:22px;color:var(--ink-900);letter-spacing:-.01em;line-height:1.2;margin-bottom:22px}
+.report h3 b{color:var(--gold)}
+.before-after{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;margin-bottom:22px}
+.ba-card{background:#fff;border:1.5px solid #e1e3ee;border-radius:14px;padding:16px;text-align:center}
+.ba-card.before{background:linear-gradient(180deg,#fff,#fef2f2);border-color:#fecaca}
+.ba-card.after{background:linear-gradient(180deg,#fff,#ecfdf5);border-color:#a7f3d0}
+.ba-card .ba-lbl{font-family:var(--font-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;margin-bottom:6px}
+.ba-card.before .ba-lbl{color:var(--red)}.ba-card.after .ba-lbl{color:#059669}
+.ba-card .ba-val{font-family:var(--font-head);font-weight:900;font-size:23px;letter-spacing:-.02em;line-height:1}
+.ba-card.before .ba-val{color:var(--red);text-decoration:line-through;text-decoration-color:#fca5a5}
+.ba-card.after .ba-val{color:#059669}
+.ba-arrow{font-size:22px;color:var(--gold);font-weight:300}
+.projection{background:var(--bg-cream);border-radius:12px;padding:20px;margin-bottom:22px}
+.projection .pj-title{font-family:var(--font-head);font-weight:700;font-size:14px;color:var(--ink-900);margin-bottom:14px}
+.bars{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:end;height:130px}
+.bar-wrap{display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end}
+.bar-val{font-family:var(--font-mono);font-size:11px;color:var(--ink-900);font-weight:600}
+.bar{background:linear-gradient(180deg,var(--royal),var(--electric));border-radius:8px 8px 0 0;width:100%;box-shadow:0 4px 12px rgba(37,71,240,.3)}
+.bar.b1{height:32%}.bar.b2{height:62%}.bar.b3{height:100%}
+.bar-lbl{font-family:var(--font-mono);font-size:10px;color:var(--ink-600);letter-spacing:.08em;text-transform:uppercase;font-weight:500}
+.btn-whatsapp{width:100%;background:linear-gradient(180deg,#25D366,#1da851);color:#fff;border:none;border-radius:10px;font-family:var(--font-head);font-weight:700;font-size:15px;padding:16px 22px;cursor:pointer;box-shadow:0 14px 34px rgba(37,211,102,.35);transition:all .15s;display:inline-flex;align-items:center;justify-content:center;gap:10px}
+.btn-whatsapp:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(37,211,102,.45)}
+.btn-whatsapp svg{width:20px;height:20px;fill:#fff}
+.privacy{font-size:11.5px;color:var(--ink-400);text-align:center;margin-top:14px;line-height:1.5}
+.privacy a{color:var(--royal);text-decoration:underline}
+.privacy label{display:flex;gap:8px;align-items:flex-start;justify-content:flex-start;cursor:pointer;text-align:left}
+.privacy input{margin-top:2px;accent-color:var(--royal)}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav">
+  <div class="wrap row">
+    <div class="brand">Arena <b>Solar</b></div>
+    <div class="links">
+      <a href="#beneficios">Vantagens</a>
+      <a href="#porque">Por que a Arena</a>
+      <a href="#cases">Clientes</a>
+      <div class="seg-switch">
+        <a id="lnkRes" href="lp-residencial.html">Pra sua casa</a>
+        <a class="on" id="lnkCom" href="lp-comercial.html">Pra sua empresa</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap row">
+    <div class="text">
+      <span class="pill-badge dark"><span class="dot"></span>Energia solar para empresas · <span class="c-regiao">interior de SP</span></span>
+      <h1>Sua empresa em <span class="c-nome">sua cidade</span> com energia própria — e o custo de energia <b>até 90% menor.</b></h1>
+      <p class="lead" id="localAngle">Energia é um dos maiores custos fixos de qualquer empresa no interior de São Paulo — e ela só sobe. A Arena Solar projeta e instala um sistema sob medida pro consumo da sua empresa, com atendimento local e financiamento empresarial, e você troca despesa por lucro.</p>
+      <div class="actions">
+        <button class="btn-primary" onclick="openWizard()">
+          <span class="ico">⚡</span>
+          <span class="txt"><b>Simular a economia da minha empresa</b><span>Grátis · Atendimento em <span class="c-nome">sua cidade</span></span></span>
+        </button>
+        <span class="micro">→ Resposta rápida no WhatsApp</span>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <div class="ti">Seu custo de energia</div>
+      <div class="num">até <b>90%</b></div>
+      <div class="sub">menor todo mês com energia solar na sua empresa</div>
+      <hr>
+      <ul>
+        <li>Projeto sob medida pro consumo da empresa</li>
+        <li>Atendimento local em <span class="c-nome">sua cidade</span></li>
+        <li>Financiamento empresarial · ROI atrativo</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<!-- ===== STRIP ===== -->
+<section class="strip">
+  <div class="wrap row">
+    <div class="item"><div class="num">até 90%</div><div class="lbl">Menos no custo de energia</div></div>
+    <div class="item"><div class="num">ROI rápido</div><div class="lbl">Retorno em poucos anos</div></div>
+    <div class="item"><div class="num">25+ anos</div><div class="lbl">De geração com baixa manutenção</div></div>
+    <div class="item"><div class="num">local</div><div class="lbl">Atendimento em <span class="c-nome">sua cidade</span></div></div>
+  </div>
+</section>
+
+<!-- ===== BENEFÍCIOS ===== -->
+<section id="beneficios" class="benef">
+  <div class="wrap">
+    <div class="head">
+      <span class="sec-label" style="justify-content:center">Energia solar pra sua empresa</span>
+      <h2>O sol do interior cortando <b>seu maior custo fixo</b></h2>
+      <p class="lead">Em <span class="c-nome">sua cidade</span>, a Arena projeta e instala o sistema certo pro consumo da sua empresa — e a economia entra direto no resultado, todo mês.</p>
+    </div>
+    <div class="bgrid">
+      <div class="bcard"><div class="ic">⚡</div><h4>Até 90% de economia</h4><p>Sua empresa gera a própria energia e corta um dos maiores custos fixos do negócio — todo mês, por mais de 25 anos.</p></div>
+      <div class="bcard"><div class="ic">📊</div><h4>Previsibilidade de custo</h4><p>Você trava o custo da energia e protege a margem da empresa contra os reajustes constantes da tarifa.</p></div>
+      <div class="bcard"><div class="ic">📈</div><h4>Retorno do investimento</h4><p>Payback atrativo e financiamento empresarial — em muitos casos a parcela cabe na economia. Depois é só lucro limpo.</p></div>
+      <div class="bcard"><div class="ic">🌱</div><h4>Imagem sustentável</h4><p>Empresa movida a energia limpa fortalece a marca, atende pautas ESG e se destaca diante de clientes e parceiros.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROBLEMA ===== -->
+<section class="problema">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="sec-label">Por que agora</span>
+        <h2>A energia é um <b>custo fixo</b> que só sobe — e o sol de <span class="c-nome">sua cidade</span> é de graça</h2>
+        <p class="lead" id="problemaLead">Câmaras frias, máquinas, ar-condicionado, iluminação, irrigação... a empresa consome cada vez mais e a tarifa acompanha. Todo mês sem energia solar é margem que sai do caixa e não volta.</p>
+        <div class="pcard">
+          <div class="quote">"O sistema solar se paga sozinho: a economia da conta vai quitando o investimento, e depois é margem extra limpa por mais de 25 anos."</div>
+          <div class="source">→ E pela Lei 14.300/2022, as regras de compensação estão garantidas até 2045 pra quem instala agora.</div>
+        </div>
+      </div>
+      <div class="points">
+        <div class="point"><div class="n">até 90%</div><div><h4>De redução no custo</h4><p>É quanto um sistema bem dimensionado tira da fatura de energia da empresa todo mês.</p></div></div>
+        <div class="point"><div class="n">☀️</div><div><h4>Sol forte o ano todo</h4><p>O interior de SP tem ótima irradiação — o telhado ou o terreno da empresa rende mais aqui.</p></div></div>
+        <div class="point"><div class="n">ROI</div><div><h4>Retorno atrativo</h4><p>Payback em poucos anos e financiamento empresarial: dá pra sair do "aluguel" da distribuidora já.</p></div></div>
+        <div class="point"><div class="n">2045</div><div><h4>Regras garantidas</h4><p>Quem instala agora trava as regras de compensação por lei.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== POR QUE A ARENA ===== -->
+<section id="porque" class="porque">
+  <div class="wrap">
+    <div class="head">
+      <span class="sec-label" style="justify-content:center">Por que a Arena</span>
+      <h2>Uma rede solar <b>com gente perto da sua empresa</b></h2>
+      <p class="lead">A Arena Solar atende várias cidades do interior paulista com unidade e equipe na sua região — sua empresa não fala com call center de fora, fala com quem está em <span class="c-nome">sua cidade</span>.</p>
+    </div>
+    <div class="tiles">
+      <div class="tile"><span class="ti">📍</span><div class="tt">Unidade<b>Na sua região</b></div></div>
+      <div class="tile"><span class="ti">🏢</span><div class="tt">Projeto pro<b>Consumo da empresa</b></div></div>
+      <div class="tile"><span class="ti">💳</span><div class="tt">Financiamento<b>Empresarial</b></div></div>
+      <div class="tile"><span class="ti">🤝</span><div class="tt">Atendimento<b>Próximo e real</b></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CASES ===== -->
+<section id="cases" class="depo">
+  <div class="wrap">
+    <div class="head">
+      <span class="sec-label" style="justify-content:center">Clientes Arena</span>
+      <h2>Empresas que já <b>geram a própria energia</b></h2>
+      <p class="lead">Negócios do interior paulista que pararam de pagar conta cara e hoje têm o sol trabalhando pela margem.</p>
+    </div>
+    <div class="tcards">
+      <div class="tcard">
+        <div class="photo" style="background:linear-gradient(135deg,#3a5f8f,#1c2f4e)"><span class="tag">Comércio</span><div class="name-label">[Nome da empresa]<small><span class="c-nome">Sua cidade</span>/SP · Fotovoltaico</small></div></div>
+        <div class="body"><div class="econ"><span class="lbl">Economia anual estimada</span><span class="val">R$ [valor]</span></div><div class="specs"><div class="row">Conta caiu de R$ [antes] para R$ [depois]</div><div class="row">Sistema dimensionado pro consumo da operação</div><div class="row">Financiado em parcela que cabe na economia</div></div></div>
+      </div>
+      <div class="tcard">
+        <div class="photo" style="background:linear-gradient(135deg,#4a7fa5,#1c3a52)"><span class="tag">Indústria</span><div class="name-label">[Nome da empresa]<small><span class="c-nome">Sua cidade</span>/SP · Fotovoltaico</small></div></div>
+        <div class="body"><div class="econ"><span class="lbl">Economia anual estimada</span><span class="val">R$ [valor]</span></div><div class="specs"><div class="row">Máquinas rodando com energia própria</div><div class="row">Custo fixo previsível por 25+ anos</div><div class="row">Atendimento local da Arena</div></div></div>
+      </div>
+      <div class="tcard">
+        <div class="photo" style="background:linear-gradient(135deg,#8f7b5a,#4d3a1f)"><span class="tag">Agronegócio</span><div class="name-label">[Nome da empresa]<small><span class="c-nome">Sua cidade</span>/SP · Fotovoltaico</small></div></div>
+        <div class="body"><div class="econ"><span class="lbl">Economia anual estimada</span><span class="val">R$ [valor]</span></div><div class="specs"><div class="row">Saiu do "aluguel" da distribuidora</div><div class="row">Margem extra limpa por 25+ anos</div><div class="row">Instalação rápida e sem dor de cabeça</div></div></div>
+      </div>
+    </div>
+    <p class="placeholder-note">⚠️ Cards de exemplo — substituir por clientes reais da Arena em cada cidade (foto + nome autorizado + economia real).</p>
+    <div class="depo-cta">
+      <button class="btn-primary" onclick="openWizard()"><span class="ico">⚡</span><span class="txt"><b>Quero economizar na minha empresa</b><span>Simulação grátis</span></span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq">
+  <div class="wrap">
+    <div class="head"><span class="sec-label" style="justify-content:center">FAQ</span><h2>Perguntas <b>frequentes</b></h2></div>
+    <div class="qa">
+      <details open><summary>Quanto a minha empresa economiza de verdade?</summary><p>Um sistema bem dimensionado reduz até 90% do custo de energia. Quanto exatamente depende do consumo da sua empresa — por isso a simulação é o primeiro passo. Negócios com máquinas, câmaras frias, ar-condicionado e operação longa costumam ter o maior ganho.</p></details>
+      <details><summary>A Arena atende em <span class="c-nome">minha cidade</span>?</summary><p>Sim — a Arena Solar tem atendimento em <span class="c-regiao">Rio Preto, Ibitinga, Barretos, Itápolis e região</span>. Sua empresa é atendida por gente da sua região, não por call center de fora.</p></details>
+      <details><summary>Serve pra qualquer tipo de empresa?</summary><p>Sim. Atendemos comércio, indústria, agronegócio e prestadores de serviço. O projeto é sob medida pro consumo do seu negócio — desde uma loja até uma operação industrial ou rural.</p></details>
+      <details><summary>Como funciona o investimento e o retorno?</summary><p>Trabalhamos com financiamento empresarial, e em muitos casos a parcela cabe dentro da economia que a empresa já passa a ter na conta. O payback costuma vir em poucos anos e, depois disso, é margem extra limpa. Na simulação a gente te mostra os números do seu caso.</p></details>
+      <details><summary>Dá muito trabalho de manutenção? Quanto demora pra instalar?</summary><p>A manutenção é baixíssima — uma limpeza periódica dos painéis e pronto, por mais de 25 anos. O prazo de instalação depende do porte do sistema e da homologação junto à distribuidora (CPFL); na visita técnica a equipe local da Arena te passa o prazo real do seu caso.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA FINAL ===== -->
+<section class="cta-final">
+  <div class="wrap">
+    <h2>A energia da sua empresa pode<br>virar <b>margem, não despesa.</b></h2>
+    <p>Faça uma simulação gratuita e veja em minutos quanto a Arena pode economizar na sua empresa em <span class="c-nome">sua cidade</span> — sem compromisso.</p>
+    <div class="actions">
+      <button class="btn-primary" onclick="openWizard()"><span class="ico">⚡</span><span class="txt"><b>Simular a economia da minha empresa</b><span>Grátis · Sem compromisso</span></span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer id="contato">
+  <div class="wrap">
+    <div class="row">
+      <div class="brand-block">
+        <div class="brand">Arena <b>Solar</b></div>
+        <p>Energia solar residencial e comercial no interior de São Paulo. Atendimento local em <span class="c-regiao">Rio Preto, Ibitinga, Barretos, Itápolis e região</span>.</p>
+      </div>
+      <div>
+        <h5>Contato</h5>
+        <ul>
+          <li>📞 (16) 99622-4950</li>
+          <li>📷 @arenasolar1</li>
+          <li>🌐 arenaenergiasolar.com.br</li>
+          <li>📍 <span class="c-nome">Sua cidade</span> — SP</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Soluções</h5>
+        <ul>
+          <li><a href="lp-residencial.html">▸ Energia solar residencial</a></li>
+          <li><a href="lp-comercial.html">▸ Energia solar pra empresa</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="end"><p>© 2026 Arena Energia Solar · Interior de SP</p><p style="margin-top:8px">Powered by <a href="https://ordem.com.br/" target="_blank">ORDEM</a> · SolarOS™</p></div>
+  </div>
+</footer>
+
+<!-- ===== WHATSAPP FLOAT ===== -->
+<a id="waFloat" href="https://wa.me/5516996224950?text=Ol%C3%A1%2C+quero+energia+solar+na+minha+empresa+%28Arena+Solar%29" target="_blank" class="wa-float">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+  Falar agora
+</a>
+
+<!-- ===== MODAL WIZARD ===== -->
+<div class="modal-overlay" id="wizardModal" onclick="if(event.target===this)closeWizard()">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeWizard()" aria-label="Fechar">×</button>
+    <div class="wizard" id="wizard">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:16%"></div></div>
+      <div class="step-label"><span id="stepName">Simulação Arena · Comercial</span><span class="step-count">Etapa <span id="stepNum">1</span> / 6</span></div>
+
+      <div class="step active" data-step="nome">
+        <h3>Vamos descobrir quanto a sua empresa economiza com energia solar?</h3>
+        <p class="step-sub">Simulação gratuita · leva menos de 1 minuto</p>
+        <label class="fl">Qual o seu nome? *</label>
+        <input type="text" id="f_nome" placeholder="Digite seu nome completo">
+        <div class="err" id="err_nome">Digite seu nome pra continuar.</div>
+        <div class="wizard-nav"><button class="btn-next" onclick="next()">Continuar →</button></div>
+      </div>
+      <div class="step" data-step="whatsapp">
+        <h3>Excelente, <span class="dyn-nome">!</span></h3>
+        <p class="step-sub">Pra onde enviamos a simulação?</p>
+        <label class="fl">WhatsApp com DDD *</label>
+        <input type="tel" id="f_whatsapp" placeholder="(16) 00000-0000" inputmode="tel">
+        <div class="err" id="err_whatsapp">Digite um WhatsApp válido (com DDD).</div>
+        <div class="wizard-nav"><button class="btn-back" onclick="back()">Voltar</button><button class="btn-next" onclick="next()">Continuar →</button></div>
+      </div>
+      <div class="step" data-step="cidade">
+        <h3>Qual a cidade da empresa?</h3>
+        <p class="step-sub">Atendemos Rio Preto, Ibitinga, Barretos, Itápolis e região</p>
+        <label class="fl">Cidade *</label>
+        <input type="text" id="f_cidade" placeholder="Ex: Barretos - SP">
+        <div class="err" id="err_cidade">Informe a cidade.</div>
+        <div class="wizard-nav"><button class="btn-back" onclick="back()">Voltar</button><button class="btn-next" onclick="next()">Continuar →</button></div>
+      </div>
+      <div class="step" data-step="tipo">
+        <h3>Qual o segmento da sua empresa?</h3>
+        <p class="step-sub">Pra entender o tipo de consumo:</p>
+        <div class="choice-grid">
+          <button class="choice" data-val="Comércio" onclick="selectChoice(this,'tipo')"><span class="ic">🏪</span><span class="info"><span class="ttl">Comércio</span><span class="desc">Loja, varejo, atacado</span></span></button>
+          <button class="choice" data-val="Indústria" onclick="selectChoice(this,'tipo')"><span class="ic">🏭</span><span class="info"><span class="ttl">Indústria</span><span class="desc">Produção, máquinas</span></span></button>
+          <button class="choice" data-val="Agronegócio" onclick="selectChoice(this,'tipo')"><span class="ic">🌾</span><span class="info"><span class="ttl">Agronegócio</span><span class="desc">Rural, irrigação, agro</span></span></button>
+          <button class="choice" data-val="Serviços / Outro" onclick="selectChoice(this,'tipo')"><span class="ic">🏢</span><span class="info"><span class="ttl">Serviços / Outro</span><span class="desc">Escritório, clínica, etc.</span></span></button>
+        </div>
+        <div class="wizard-nav"><button class="btn-back" onclick="back()">Voltar</button></div>
+      </div>
+      <div class="step" data-step="faixa">
+        <h3>Qual o valor da conta de energia da empresa?</h3>
+        <p class="step-sub">Selecione a faixa:</p>
+        <div class="choice-grid">
+          <button class="choice" data-val="Menor que R$ 1.000" onclick="selectChoice(this,'faixa')"><span class="ic">↓</span><span class="info"><span class="ttl">Menor que R$ 1.000</span><span class="desc">Sistemas compactos</span></span></button>
+          <button class="choice" data-val="R$ 1.000 a R$ 5.000" onclick="selectChoice(this,'faixa')"><span class="ic">$</span><span class="info"><span class="ttl">R$ 1.000 a R$ 5.000</span><span class="desc">Maior economia</span></span></button>
+          <button class="choice" data-val="Maior que R$ 5.000" onclick="selectChoice(this,'faixa')"><span class="ic">$$</span><span class="info"><span class="ttl">Maior que R$ 5.000</span><span class="desc">Alto consumo · maior retorno</span></span></button>
+        </div>
+        <div class="wizard-nav"><button class="btn-back" onclick="back()">Voltar</button></div>
+      </div>
+      <div class="step" data-step="valor">
+        <h3>Qual o valor médio da conta da empresa?</h3>
+        <p class="step-sub">Pra calcular a economia do seu negócio</p>
+        <label class="fl">Valor mensal *</label>
+        <input type="text" id="f_valor" placeholder="R$ 0,00" inputmode="numeric">
+        <div class="err" id="err_valor">Informe o valor médio da conta.</div>
+        <div class="wizard-nav"><button class="btn-back" onclick="back()">Voltar</button><button class="btn-next" onclick="calcular()">Calcular economia</button></div>
+      </div>
+
+      <div class="report" id="reportEconomia">
+        <span class="report-badge"><span class="dot"></span>Simulação concluída</span>
+        <h3 class="report-title"><span class="dyn-nome">oi</span>, a economia da sua empresa <b>está pronta!</b></h3>
+        <div class="before-after">
+          <div class="ba-card before"><div class="ba-lbl">Conta hoje</div><div class="ba-val" id="r_antes">R$ 3.000,00</div></div>
+          <div class="ba-arrow">→</div>
+          <div class="ba-card after"><div class="ba-lbl">Com solar</div><div class="ba-val" id="r_depois">R$ 300,00</div></div>
+        </div>
+        <div class="projection">
+          <div class="pj-title">Sua economia acumulada</div>
+          <div class="bars">
+            <div class="bar-wrap"><div class="bar-val" id="r_1ano">R$ 32.400</div><div class="bar b1"></div><div class="bar-lbl">1 ano</div></div>
+            <div class="bar-wrap"><div class="bar-val" id="r_3anos">R$ 97.200</div><div class="bar b2"></div><div class="bar-lbl">3 anos</div></div>
+            <div class="bar-wrap"><div class="bar-val" id="r_5anos">R$ 162.000</div><div class="bar b3"></div><div class="bar-lbl">5 anos</div></div>
+          </div>
+        </div>
+        <div class="privacy" style="margin-bottom:14px"><label><input type="checkbox" id="lgpd_e" checked><span>Li e concordo com a <a href="#">Política de Privacidade</a> e autorizo o contato comercial, conforme a LGPD (Lei 13.709/2018).</span></label></div>
+        <button class="btn-whatsapp" onclick="return enviarWhatsApp()">
+          <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+          Receber simulação no WhatsApp
+        </button>
+        <p class="privacy" style="margin-top:14px">Vai abrir o WhatsApp da Arena com a simulação da sua empresa já preenchida.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const WHATSAPP_DESTINO = '5516996224950'; // Arena (16) 99622-4950
+const SEGMENTO = 'Comercial';
+
+/* ===== CIDADE DINÂMICA (?cidade=) ===== */
+const CIDADES = {
+  'rio-preto': { nome:'Rio Preto', regiao:'Rio Preto e região', angulo:'Rio Preto é o polo do noroeste paulista, e o calor da região faz o ar-condicionado e a refrigeração pesarem na conta da empresa o ano todo. A Arena projeta e instala energia solar sob medida pro seu negócio, com atendimento local, e você troca despesa por lucro.' },
+  'ibitinga': { nome:'Ibitinga', regiao:'Ibitinga e região', angulo:'Em Ibitinga, a capital do bordado, indústrias e comércios sentem o peso da energia no custo de produção. A Arena projeta e instala energia solar sob medida pra sua empresa, com atendimento local, e a economia entra direto no resultado.' },
+  'barretos': { nome:'Barretos', regiao:'Barretos e região', angulo:'Em Barretos o calor e o agronegócio forte fazem a conta de energia disparar nas empresas. A Arena projeta e instala energia solar sob medida pro seu negócio, com atendimento local, pra você usar energia à vontade sem comprometer a margem.' },
+  'itapolis': { nome:'Itápolis', regiao:'Itápolis e região', angulo:'Em Itápolis o sol rende o ano todo — e cada real de energia conta no custo da empresa. A Arena projeta e instala energia solar sob medida pro seu negócio, com atendimento local, e você troca conta cara por margem limpa.' },
+  '_default': { nome:'sua cidade', regiao:'Rio Preto, Ibitinga, Barretos, Itápolis e região', angulo:'Energia é um dos maiores custos fixos de qualquer empresa no interior de São Paulo — e ela só sobe. A Arena Solar projeta e instala um sistema sob medida pro consumo da sua empresa, com atendimento local e financiamento empresarial, e você troca despesa por lucro.' }
+};
+function slugify(s){return (s||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');}
+const ALIASES = {'sao-jose-do-rio-preto':'rio-preto','s-j-rio-preto':'rio-preto','sjrp':'rio-preto','rio-preto-sp':'rio-preto'};
+let CID = CIDADES._default;
+function applyCidade(){
+  const raw = new URLSearchParams(location.search).get('cidade');
+  let slug = slugify(raw);
+  if(ALIASES[slug]) slug = ALIASES[slug];
+  CID = CIDADES[slug] || CIDADES._default;
+  document.querySelectorAll('.c-nome').forEach(el=>el.textContent=CID.nome);
+  document.querySelectorAll('.c-regiao').forEach(el=>el.textContent=CID.regiao);
+  const la=document.getElementById('localAngle'); if(la) la.textContent=CID.angulo;
+  if(CID!==CIDADES._default){
+    document.title='Arena Solar · Energia solar para empresas em '+CID.nome;
+    const md=document.getElementById('metaDesc'); if(md) md.setAttribute('content','Energia solar pra sua empresa em '+CID.nome+'. Reduza até 90% do custo de energia, com projeto sob medida, atendimento local e financiamento empresarial.');
+    const fc=document.getElementById('f_cidade'); if(fc) fc.value=CID.nome+' - SP';
+  }
+  // preserva ?cidade ao trocar de segmento
+  const res=document.getElementById('lnkRes'); if(res&&raw) res.href='lp-residencial.html?cidade='+encodeURIComponent(slug);
+}
+
+/* ===== WIZARD (fluxo linear) ===== */
+const state = { nome:'', whatsapp:'', cidade:'', tipo:'', faixa:'', valor:0 };
+let currentStep = 0; let stepHistory = [0];
+function openWizard(){ const m=document.getElementById('wizardModal'); resetWizard(); m.classList.add('open'); document.body.style.overflow='hidden'; setTimeout(()=>{const n=document.getElementById('f_nome');if(n)n.focus();},120); }
+function closeWizard(){ document.getElementById('wizardModal').classList.remove('open'); document.body.style.overflow=''; }
+function resetWizard(){ Object.keys(state).forEach(k=>state[k]=(k==='valor'?0:'')); document.querySelectorAll('.choice').forEach(c=>c.classList.remove('selected')); document.querySelectorAll('#f_nome,#f_whatsapp,#f_valor').forEach(i=>i.value=''); const fc=document.getElementById('f_cidade'); if(fc&&CID!==CIDADES._default) fc.value=CID.nome+' - SP'; else if(fc) fc.value=''; document.querySelectorAll('.report').forEach(r=>r.classList.remove('active')); currentStep=0; stepHistory=[0]; showStep(0); }
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeWizard(); });
+function idxByName(name){const s=document.querySelectorAll('.step');for(let i=0;i<s.length;i++)if(s[i].dataset.step===name)return i;return -1;}
+function getNextStep(fromIdx){
+  const order=['nome','whatsapp','cidade','tipo','faixa','valor'];
+  const cur=document.querySelectorAll('.step')[fromIdx].dataset.step;
+  const i=order.indexOf(cur);
+  if(i>=0&&i<order.length-1)return idxByName(order[i+1]);
+  return -1;
+}
+function showStep(idx){ const steps=document.querySelectorAll('.step'),reports=document.querySelectorAll('.report'); steps.forEach(s=>s.classList.remove('active'));reports.forEach(r=>r.classList.remove('active')); if(idx>=0&&idx<steps.length){steps[idx].classList.add('active');currentStep=idx;updateProgress(idx);updateDyn();} }
+function showReport(){ document.querySelectorAll('.step').forEach(s=>s.classList.remove('active')); document.getElementById('reportEconomia').classList.add('active'); document.getElementById('progressFill').style.width='100%'; document.getElementById('stepName').textContent='Resultado';document.getElementById('stepNum').textContent='✓'; updateDyn(); }
+function updateProgress(idx){ const map={nome:16,whatsapp:33,cidade:50,tipo:66,faixa:83,valor:95}; const cur=document.querySelectorAll('.step')[idx].dataset.step; document.getElementById('progressFill').style.width=(map[cur]||16)+'%'; document.getElementById('stepNum').textContent=idx+1; }
+function updateDyn(){ const nome=(state.nome.split(' ')[0])||'oi'; document.querySelectorAll('.dyn-nome').forEach(el=>el.textContent=nome); }
+function next(){ if(!validate())return; save(); const n=getNextStep(currentStep); if(n>=0){stepHistory.push(n);showStep(n);} }
+function back(){ if(stepHistory.length>1){stepHistory.pop();showStep(stepHistory[stepHistory.length-1]);} }
+function selectChoice(btn,key){ btn.parentElement.querySelectorAll('.choice').forEach(c=>c.classList.remove('selected')); btn.classList.add('selected');state[key]=btn.dataset.val; setTimeout(()=>{const n=getNextStep(currentStep); if(n>=0){stepHistory.push(n);showStep(n);}},260); }
+function validate(){ const key=document.querySelectorAll('.step')[currentStep].dataset.step; if(key==='nome'){if(document.getElementById('f_nome').value.trim().length<2)return showErr('err_nome');return true;} if(key==='whatsapp'){if(document.getElementById('f_whatsapp').value.replace(/\D/g,'').length<10)return showErr('err_whatsapp');return true;} if(key==='cidade'){if(document.getElementById('f_cidade').value.trim().length<3)return showErr('err_cidade');return true;} if(key==='valor'){const num=parseFloat(document.getElementById('f_valor').value.replace(/[^\d,.-]/g,'').replace(/\./g,'').replace(',','.'));if(isNaN(num)||num<=0)return showErr('err_valor');return true;} return true; }
+function showErr(id){const e=document.getElementById(id);e.classList.add('show');setTimeout(()=>e.classList.remove('show'),3500);return false;}
+function save(){ const key=document.querySelectorAll('.step')[currentStep].dataset.step; if(key==='nome')state.nome=document.getElementById('f_nome').value.trim(); if(key==='whatsapp')state.whatsapp=document.getElementById('f_whatsapp').value.trim(); if(key==='cidade')state.cidade=document.getElementById('f_cidade').value.trim(); if(key==='valor')state.valor=parseFloat(document.getElementById('f_valor').value.replace(/[^\d,.-]/g,'').replace(/\./g,'').replace(',','.')); }
+function calcular(){ if(!validate())return;save(); const conta=state.valor, nova=Math.round(conta*0.10), economiaMes=conta-nova; const ano=economiaMes*12,a3=economiaMes*36,a5=economiaMes*60; document.getElementById('r_antes').textContent='R$ '+fmt(conta); document.getElementById('r_depois').textContent='R$ '+fmt(nova); document.getElementById('r_1ano').textContent='R$ '+fmt(ano); document.getElementById('r_3anos').textContent='R$ '+fmt(a3); document.getElementById('r_5anos').textContent='R$ '+fmt(a5); showReport(); }
+function fmt(n){return n.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function enviarWhatsApp(){ if(!document.getElementById('lgpd_e').checked){alert('Aceite a Política de Privacidade pra continuar.');return false;} const conta=state.valor,nova=Math.round(conta*0.10),economiaMes=conta-nova,ano=economiaMes*12,a3=economiaMes*36,a5=economiaMes*60; const msg='Olá, Arena! Fiz a simulação no site.\n\n'+ '*Perfil:* '+SEGMENTO+'\n*Nome:* '+state.nome+'\n*WhatsApp:* '+state.whatsapp+'\n*Cidade:* '+state.cidade+'\n'+ '*Segmento:* '+state.tipo+'\n*Faixa da conta:* '+state.faixa+'\n'+ '*Valor da conta:* R$ '+fmt(conta)+'\n*Estimativa com solar:* R$ '+fmt(nova)+'\n'+ '*Economia projetada:*\n• 1 ano: R$ '+fmt(ano)+'\n• 3 anos: R$ '+fmt(a3)+'\n• 5 anos: R$ '+fmt(a5)+'\n\nQuero falar com um especialista da minha região.'; window.open('https://wa.me/'+WHATSAPP_DESTINO+'?text='+encodeURIComponent(msg),'_blank'); return false; }
+
+document.addEventListener('DOMContentLoaded',()=>{
+  applyCidade();
+  const wa=document.getElementById('f_whatsapp');
+  if(wa)wa.addEventListener('input',e=>{let v=e.target.value.replace(/\D/g,'').substring(0,11);if(v.length>0)v='('+v.substring(0,2)+(v.length>2?') '+v.substring(2):'');if(v.length>10)v=v.substring(0,10)+'-'+v.substring(10);if(v.length>14)v=v.substring(0,14)+v.substring(14,15);e.target.value=v;});
+  const vf=document.getElementById('f_valor');
+  if(vf)vf.addEventListener('input',e=>{let v=e.target.value.replace(/\D/g,'');if(!v){e.target.value='';return;}v=(parseInt(v)/100).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});e.target.value='R$ '+v;});
+  ['f_nome','f_whatsapp','f_cidade','f_valor'].forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();if(id==='f_valor')calcular();else next();}});});
+});
+</script>
+
+</body>
+</html>
